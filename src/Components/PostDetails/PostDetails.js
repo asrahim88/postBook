@@ -1,11 +1,11 @@
 import React from 'react';
 
 const PostDetails = (props) => {
+    const {Title} = props.post;
     
-    console.log(props)
     return (
         <div>
-           
+          Title: {Title}
         </div>
     );
 };

@@ -3,18 +3,22 @@ import React, { useEffect, useState } from 'react';
 import PostDetails from '../PostDetails/PostDetails';
 
 const Post = () => {
-    const [post, setPost] = useState([]);
+    const [posts, setPosts] = useState([]);
     useEffect(() => {
-        const url = "https://jsonplaceholder.typicode.com/users";
+        const url = "https://jsonplaceholder.typicode.com/posts";
         fetch(url)
         .then(res => res.json())
-        .then(data => setPost(data))
+        .then(data => setPosts(data))
     }, [])
     
     return (
         
         <Container>
-            <h1>Post Length: {post.length}</h1>
+            <h1>Post Length: {posts.length}</h1>
+            {
+                posts.map(post => <PostDetails post = {posts}></PostDetails>)
+            }
+            
            
             
 
